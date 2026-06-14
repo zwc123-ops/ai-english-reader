@@ -4,7 +4,7 @@
   "author": "AI Reader",
   "private": true,
   "description": "AI 英语精读阅读器 - 基于 DeepSeek 的智能英语阅读工具",
-  "main": "electron-main.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
