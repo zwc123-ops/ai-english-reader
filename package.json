@@ -1,0 +1,56 @@
+{
+  "name": "ai-english-reader",
+  "version": "0.1.0",
+  "author": "AI Reader",
+  "private": true,
+  "description": "AI 英语精读阅读器 - 基于 DeepSeek 的智能英语阅读工具",
+  "main": "electron-main.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "electron": "electron .",
+    "build": "electron-builder --win",
+    "build:dir": "electron-builder --win --dir"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "build": {
+    "appId": "com.ai-english-reader.app",
+    "productName": "AI英语精读阅读器",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "electron-main.js",
+      "server.js",
+      "index.html",
+      "app.js",
+      "styles.css",
+      "package.json",
+      "node_modules/**/*"
+    ],
+    "asar": false,
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "build/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "AI英语精读阅读器"
+    },
+    "extraResources": []
+  },
+  "devDependencies": {
+    "electron": "^42.4.0",
+    "electron-builder": "^26.15.3"
+  }
+}

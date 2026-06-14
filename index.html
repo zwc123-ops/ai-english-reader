@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI 英语精读阅读器</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app" class="app-shell">
+      <aside class="nav-rail" aria-label="主导航">
+        <div class="brand">
+          <div class="brand-mark">R</div>
+          <div>
+            <strong>精读器</strong>
+            <span>AI English Reader</span>
+          </div>
+        </div>
+        <button class="nav-item is-active" data-view="library">书库</button>
+        <button class="nav-item" data-view="reader">阅读</button>
+        <button class="nav-item" data-view="vocabulary">生词</button>
+        <button class="nav-item" data-view="settings">设置</button>
+      </aside>
+
+      <main class="workspace">
+        <section id="libraryView" class="view is-active" aria-label="书库"></section>
+        <section id="readerView" class="view" aria-label="阅读器"></section>
+        <section id="vocabularyView" class="view" aria-label="生词本"></section>
+        <section id="settingsView" class="view" aria-label="设置"></section>
+      </main>
+    </div>
+
+    <div id="selectionToolbar" class="selection-toolbar" hidden>
+      <button data-action="lookup">查词</button>
+      <button data-action="sentence">分析句子</button>
+      <button data-action="paragraph">解释段落</button>
+    </div>
+
+    <div id="toastHost" class="toast-host" aria-live="polite"></div>
+    <input id="fileInput" class="file-input" type="file" accept=".txt,.epub,.pdf,text/plain,application/epub+zip,application/pdf" multiple />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked.js/12.0.2/marked.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
