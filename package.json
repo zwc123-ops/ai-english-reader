@@ -4,13 +4,15 @@
   "author": "AI Reader",
   "private": true,
   "description": "AI 英语精读阅读器 - 基于 DeepSeek 的智能英语阅读工具",
-  "main": "server.js",
+  "main": "electron-main.js",
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
+    "lint": "node scripts/check.js",
+    "build": "node scripts/check.js",
     "electron": "electron .",
-    "build": "electron-builder --win",
-    "build:dir": "electron-builder --win --dir"
+    "pack:win": "electron-builder --win",
+    "pack:win:dir": "electron-builder --win --dir"
   },
   "engines": {
     "node": ">=18"
@@ -24,9 +26,8 @@
     "files": [
       "electron-main.js",
       "server.js",
-      "index.html",
-      "app.js",
-      "styles.css",
+      "lib/**/*",
+      "public/**/*",
       "package.json",
       "node_modules/**/*"
     ],
